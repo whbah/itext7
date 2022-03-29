@@ -810,7 +810,7 @@ public class PdfType0Font extends PdfFont {
         boolean firstTime = true;
         for (int code : usedGlyphs) {
             Glyph glyph = fontProgram.getGlyphByCode(code);
-            if (glyph.getWidth() == FontProgram.DEFAULT_WIDTH) {
+            if (glyph!=null || glyph.getWidth() == FontProgram.DEFAULT_WIDTH) {
                 continue;
             }
             if (glyph.getCode() == lastNumber + 1) {
